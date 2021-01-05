@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct Calculator: View {
-    // MARK: - Add states here
-    
+
     var body: some View {
         ZStack{
             Color.black.edgesIgnoringSafeArea(.all)
@@ -56,12 +55,7 @@ struct Calculator: View {
     }
 }
 
-/** # Don't touch this code at all
- This code is to minimize the code you write for each button.
- You create modifiers and add them to each button, and they will all share same modifiers
- */
 
-// 1. Title Modifier: To present the result
 struct TitleModifier: ViewModifier{
     func body(content: Content) -> some View {
         content
@@ -72,7 +66,6 @@ struct TitleModifier: ViewModifier{
     }
 }
 
-// 2. Button Modifier:
 struct ButtonModifier: ViewModifier{
     enum `Type`{case gray, orange, zero}
     var type: Type
@@ -87,7 +80,6 @@ struct ButtonModifier: ViewModifier{
     }
 }
 
-// 3. Zero Modifier, this view modifier for 0 specifically, where it width is
 struct Zero: ViewModifier{
     func body(content: Content) -> some View {
         content
